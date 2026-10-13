@@ -1,6 +1,6 @@
 name: Kimtech Family Safety APK
 
-on:
+'on':
 workflow_dispatch:
 
 jobs:
