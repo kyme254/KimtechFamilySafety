@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android">
 
-    <!-- Connect to the ParentGuard server -->
+    <!-- Network access for the ParentGuard server -->
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
 
-    <!-- Location features, when enabled and consented to -->
+    <!-- Location access, subject to Android runtime permissions and consent -->
     <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
     <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
     <uses-permission android:name="android.permission.ACCESS_BACKGROUND_LOCATION" />
@@ -30,6 +30,24 @@
             </intent-filter>
 
         </activity>
+
+        <!-- Android device administrator receiver -->
+        <receiver
+            android:name=".ParentGuardDeviceAdminReceiver"
+            android:description="@string/device_admin_description"
+            android:label="ParentGuard Device Administrator"
+            android:permission="android.permission.BIND_DEVICE_ADMIN"
+            android:exported="true">
+
+            <meta-data
+                android:name="android.app.device_admin"
+                android:resource="@xml/device_admin_receiver" />
+
+            <intent-filter>
+                <action android:name="android.app.action.DEVICE_ADMIN_ENABLED" />
+            </intent-filter>
+
+        </receiver>
 
     </application>
 
