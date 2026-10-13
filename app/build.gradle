@@ -4,17 +4,15 @@ plugins {
 }
 
 android {
-    namespace 'ke.co.lavenderhotels.kimtechgateway'
+    namespace 'ke.co.kimtech.gateway'
     compileSdk 35
 
     defaultConfig {
-        applicationId 'ke.co.lavenderhotels.kimtechgateway'
+        applicationId 'ke.co.kimtech.gateway'
         minSdk 23
         targetSdk 35
         versionCode 1
         versionName '1.0'
-
-        testInstrumentationRunner 'androidx.test.runner.AndroidJUnitRunner'
     }
 
     buildTypes {
