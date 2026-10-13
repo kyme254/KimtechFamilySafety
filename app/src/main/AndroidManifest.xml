@@ -1,28 +1,27 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android">
 
-    <!-- Internet and network access -->
+    <!-- Connect to the ParentGuard server -->
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
 
-    <!-- SMS permissions -->
-    <uses-permission android:name="android.permission.SEND_SMS" />
-    <uses-permission android:name="android.permission.RECEIVE_SMS" />
-    <uses-permission android:name="android.permission.READ_SMS" />
+    <!-- Location features, when enabled and consented to -->
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_BACKGROUND_LOCATION" />
 
-    <!-- Background operation support -->
-    <uses-permission android:name="android.permission.FOREGROUND_SERVICE" />
-    <uses-permission android:name="android.permission.WAKE_LOCK" />
+    <!-- Notifications on supported Android versions -->
+    <uses-permission android:name="android.permission.POST_NOTIFICATIONS" />
 
     <application
         android:allowBackup="false"
-        android:label="Kimtech SMS Gateway"
+        android:label="Kimtech Family Safety"
         android:supportsRtl="true"
         android:usesCleartextTraffic="false"
-        android:theme="@style/AppTheme">
+        android:theme="@style/Theme.MaterialComponents.DayNight.NoActionBar">
 
         <activity
-            android:name="ke.co.kimtech.gateway.MainActivity"
+            android:name=".MainActivity"
             android:exported="true">
 
             <intent-filter>
